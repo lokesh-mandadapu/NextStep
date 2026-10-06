@@ -208,6 +208,14 @@
                 Profile
             </button>
 
+            <button
+                class="nav-item"
+                data-page="validation"
+            >
+                <span>✓</span>
+                Project Validation
+            </button>
+
         </nav>
 
 
@@ -1717,6 +1725,43 @@
                 Edit Profile
             </button>
 
+        </section>
+
+        <section
+            id="validation"
+            class="page"
+        >
+            <div class="page-heading">
+                <span class="card-label">MODEL EVALUATION</span>
+                <h2>Project Validation</h2>
+                <p>Deterministic tests for the rule-based career-readiness workflow.</p>
+            </div>
+
+            <div class="overview-grid validation-summary">
+                <div class="card">
+                    <span class="card-label">TOTAL TEST CASES</span>
+                    <h3 id="validationTotal">0</h3>
+                </div>
+                <div class="card">
+                    <span class="card-label">PASSED</span>
+                    <h3 id="validationPassed" class="green-text">0</h3>
+                </div>
+                <div class="card">
+                    <span class="card-label">FAILED</span>
+                    <h3 id="validationFailed" class="error-message">0</h3>
+                </div>
+            </div>
+
+            <div class="card large-card">
+                <div class="card-header">
+                    <div>
+                        <span class="card-label">VALIDATION RESULTS</span>
+                        <h3>Actual test execution</h3>
+                    </div>
+                    <button class="primary-button" id="runValidationButton">Run tests</button>
+                </div>
+                <div id="validationResults"></div>
+            </div>
         </section>
 
     </main>
