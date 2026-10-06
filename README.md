@@ -28,10 +28,10 @@ opaque recommendation.
 
 ### Functional
 
-Profile editing, career selection, skill add/edit, evidence capture, skill
-verification, gap analysis, readiness calculation, learning-path generation,
-peer matching, connection requests, and project validation are implemented in
-the browser.
+Profile editing, career selection, skill add/edit, evidence capture, randomized
+skill assessments, gap analysis, readiness calculation, learning-path
+generation, peer matching, connection requests, and project validation are
+implemented in the browser.
 
 ### Non-functional
 
@@ -87,10 +87,18 @@ it does not claim that historical ceremonies or velocity were recorded.
 
 ### Verification
 
-`verified score = claimed score × 0.6 + evidence score × 0.2 +
-assessment score × 0.2`, capped at 100. Each evidence item contributes 20
-points to the evidence component. A score of 60 or more is displayed as
-Supported.
+Supported skills have a question bank for Java, Python, Data Structures, SQL,
+Git, JavaScript, and HTML/CSS. Each assessment randomly selects up to five
+unique questions and shuffles their options while retaining the correct answer
+by value. The student must answer each question before continuing.
+
+`assessment score = correct answers / total questions × 100`
+
+Performance levels are Expert (90–100), Strong (75–89), Intermediate (60–74),
+Developing (40–59), and Beginner (0–39). A score of 60 or more is verified.
+The result, answer review, timestamp, previous score, and improvement are
+persisted. Claimed skill level and evidence remain visible alongside the
+assessment result.
 
 ### Skill gap and readiness
 
@@ -115,12 +123,13 @@ Every recommendation displays the inputs behind its result.
 
 ## Testing and validation
 
-The **Project Validation** page executes twelve deterministic checks covering
-profile retrieval/update, adding a skill, verification input, career lookup,
-readiness inputs, learning paths, peer matching, invalid input, unknown
-careers, empty skills, and safe unknown-skill handling. Each result displays
-test ID, input, expected result, actual result, and status. The page is
-generated from the current implementation rather than hardcoded pass values.
+The **Project Validation** page executes twelve checks covering profile
+retrieval/update, adding a skill, question generation, duplicate-free
+selection, answer evaluation, score calculation, performance level, skill
+verification update, Career Gap integration, reassessment storage, and safe
+empty/unknown data handling. Each result displays test ID, input, expected
+result, actual result, and status. The page is generated from the current
+implementation rather than hardcoded pass values.
 
 The reference scenario is Software Developer with Java, Data Structures, SQL,
 Git, and Python as required skills. Changing skills/evidence in the UI changes

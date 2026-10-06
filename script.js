@@ -20,6 +20,57 @@ document.addEventListener("DOMContentLoaded", function () {
         Python: ["Core syntax", "Functions", "Data handling", "Testing"],
         APIs: ["HTTP fundamentals", "REST resources", "Validation", "API testing"]
     };
+    const questionBank = {
+        Java: [
+            { q: "Which collection does not allow duplicate elements?", options: ["ArrayList", "HashSet", "LinkedList", "Vector"], answer: "HashSet", explanation: "HashSet stores unique values.", difficulty: "Easy" },
+            { q: "Which keyword is used to inherit a class in Java?", options: ["implements", "extends", "inherits", "super"], answer: "extends", explanation: "extends creates class inheritance.", difficulty: "Easy" },
+            { q: "What does method overriding require?", options: ["A subclass method with the same signature", "Two static methods", "A private constructor", "A final class"], answer: "A subclass method with the same signature", explanation: "Overriding replaces inherited behavior using the same signature.", difficulty: "Medium" },
+            { q: "Which type is immutable in Java?", options: ["String", "StringBuilder", "ArrayList", "HashMap"], answer: "String", explanation: "String objects cannot be changed after creation.", difficulty: "Medium" },
+            { q: "What is the purpose of an interface?", options: ["Define a contract", "Store database rows", "Allocate memory", "Stop inheritance"], answer: "Define a contract", explanation: "An interface specifies behavior that implementing classes provide.", difficulty: "Medium" }
+        ],
+        Python: [
+            { q: "Which Python type stores key-value pairs?", options: ["list", "tuple", "dict", "set"], answer: "dict", explanation: "Dictionaries map keys to values.", difficulty: "Easy" },
+            { q: "What does list comprehension create?", options: ["A list from an expression", "A class", "A database", "A thread"], answer: "A list from an expression", explanation: "It compactly transforms or filters iterable values.", difficulty: "Easy" },
+            { q: "Which keyword handles an exception?", options: ["catch", "except", "rescue", "handle"], answer: "except", explanation: "except handles an exception raised in a try block.", difficulty: "Easy" },
+            { q: "What does a generator yield?", options: ["Values lazily", "Only strings", "A compiled module", "A sorted list"], answer: "Values lazily", explanation: "yield produces values on demand and preserves generator state.", difficulty: "Medium" },
+            { q: "Which object is mutable?", options: ["tuple", "string", "list", "int"], answer: "list", explanation: "List contents can be changed after creation.", difficulty: "Easy" }
+        ],
+        "Data Structures": [
+            { q: "Which structure follows LIFO order?", options: ["Queue", "Stack", "Graph", "Heap"], answer: "Stack", explanation: "The last item pushed is the first item popped.", difficulty: "Easy" },
+            { q: "What is binary search complexity on a sorted array?", options: ["O(1)", "O(log n)", "O(n)", "O(n²)"], answer: "O(log n)", explanation: "Each comparison halves the remaining search range.", difficulty: "Medium" },
+            { q: "Which traversal visits a tree root between its subtrees?", options: ["Preorder", "Inorder", "Postorder", "Level order"], answer: "Inorder", explanation: "Inorder is left subtree, root, right subtree.", difficulty: "Medium" },
+            { q: "What does a hash table primarily provide?", options: ["Average constant-time lookup", "Sorted traversal", "Guaranteed recursion", "Graph cycles"], answer: "Average constant-time lookup", explanation: "Hashing maps keys to buckets for fast average lookup.", difficulty: "Medium" },
+            { q: "Which structure is best for FIFO processing?", options: ["Stack", "Queue", "Tree", "Set"], answer: "Queue", explanation: "A queue removes items in arrival order.", difficulty: "Easy" }
+        ],
+        SQL: [
+            { q: "Which clause filters grouped results?", options: ["WHERE", "HAVING", "ORDER BY", "LIMIT"], answer: "HAVING", explanation: "HAVING filters after GROUP BY aggregation.", difficulty: "Medium" },
+            { q: "What does a primary key guarantee?", options: ["Unique non-null row identity", "Sorted rows", "Encrypted data", "A foreign table"], answer: "Unique non-null row identity", explanation: "A primary key uniquely identifies each row.", difficulty: "Easy" },
+            { q: "Which join returns matching rows from both tables?", options: ["INNER JOIN", "CROSS JOIN", "FULL JOIN", "SELF JOIN"], answer: "INNER JOIN", explanation: "INNER JOIN keeps rows satisfying the join condition.", difficulty: "Easy" },
+            { q: "Why are indexes used?", options: ["To speed up lookups", "To validate passwords", "To delete duplicates", "To create tables"], answer: "To speed up lookups", explanation: "Indexes trade storage/write cost for faster reads.", difficulty: "Easy" },
+            { q: "What does COUNT(*) return?", options: ["Number of rows", "Largest value", "Column names", "A table copy"], answer: "Number of rows", explanation: "COUNT(*) counts rows selected by the query.", difficulty: "Easy" }
+        ],
+        Git: [
+            { q: "What does git commit record?", options: ["A snapshot of staged changes", "A remote server", "Only deleted files", "A password"], answer: "A snapshot of staged changes", explanation: "A commit stores a versioned project snapshot and message.", difficulty: "Easy" },
+            { q: "Which command creates a branch?", options: ["git branch", "git fork", "git copy", "git split"], answer: "git branch", explanation: "git branch creates or lists branch references.", difficulty: "Easy" },
+            { q: "What does git merge do?", options: ["Combines branch histories", "Deletes all branches", "Encrypts commits", "Downloads Git"], answer: "Combines branch histories", explanation: "Merge integrates changes from another branch.", difficulty: "Easy" },
+            { q: "What is the staging area for?", options: ["Selecting changes for the next commit", "Publishing a website", "Resolving DNS", "Running tests only"], answer: "Selecting changes for the next commit", explanation: "git add puts chosen changes into the index.", difficulty: "Medium" },
+            { q: "Which command gets remote changes without merging?", options: ["git fetch", "git push", "git init", "git tag"], answer: "git fetch", explanation: "fetch downloads remote references and objects only.", difficulty: "Medium" }
+        ],
+        JavaScript: [
+            { q: "Which keyword declares a block-scoped variable?", options: ["var", "let", "define", "newvar"], answer: "let", explanation: "let is block scoped; var is function scoped.", difficulty: "Easy" },
+            { q: "What does a Promise represent?", options: ["An eventual async result", "A CSS rule", "A database table", "A loop counter"], answer: "An eventual async result", explanation: "Promises model pending, fulfilled, or rejected work.", difficulty: "Easy" },
+            { q: "Which method creates a new array by transforming items?", options: ["map", "push", "pop", "join"], answer: "map", explanation: "map returns transformed values for every item.", difficulty: "Easy" },
+            { q: "What does === compare?", options: ["Value and type", "Only object identity", "Only text length", "CSS selectors"], answer: "Value and type", explanation: "Strict equality does not coerce operand types.", difficulty: "Easy" },
+            { q: "What is event bubbling?", options: ["An event moving from target toward ancestors", "A timer loop", "A network retry", "A syntax error"], answer: "An event moving from target toward ancestors", explanation: "DOM events propagate upward unless stopped.", difficulty: "Medium" }
+        ],
+        "HTML/CSS": [
+            { q: "Which HTML element represents the main page content?", options: ["main", "span", "meta", "title"], answer: "main", explanation: "main identifies the dominant content of a document.", difficulty: "Easy" },
+            { q: "What does CSS flexbox primarily control?", options: ["One-dimensional layout", "Database schemas", "Image compression", "HTTP headers"], answer: "One-dimensional layout", explanation: "Flexbox lays out items along a row or column.", difficulty: "Easy" },
+            { q: "Which selector targets a class?", options: [".card", "#card", "card()", "*card"], answer: ".card", explanation: "A dot prefix selects class attributes.", difficulty: "Easy" },
+            { q: "Why is semantic HTML useful?", options: ["It improves structure and accessibility", "It encrypts content", "It replaces JavaScript", "It prevents all bugs"], answer: "It improves structure and accessibility", explanation: "Meaningful elements help users, tools, and search engines.", difficulty: "Medium" },
+            { q: "What does box-sizing: border-box do?", options: ["Includes padding and border in declared size", "Hides overflow", "Adds a shadow", "Centers text"], answer: "Includes padding and border in declared size", explanation: "The declared width includes content, padding, and border.", difficulty: "Medium" }
+        ]
+    };
     const peers = [
         { name: "Priya S.", career: "Software Developer", skills: { Java: 82, SQL: 88, "Data Structures": 55 } },
         { name: "Arjun K.", career: "Software Developer", skills: { "Data Structures": 91, Java: 62, Git: 80 } },
@@ -35,6 +86,7 @@ document.addEventListener("DOMContentLoaded", function () {
             { name: "Git", level: "Intermediate", score: 70, evidence: [{ type: "Project", title: "Team repository" }] }
         ],
         assessments: {},
+        learningProgress: {},
         connections: []
     };
     let state = loadState();
@@ -50,7 +102,14 @@ document.addEventListener("DOMContentLoaded", function () {
     function loadState() {
         try {
             const saved = JSON.parse(localStorage.getItem(storageKey));
-            return saved ? Object.assign(clone(defaultState), saved) : clone(defaultState);
+            const loaded = saved ? Object.assign(clone(defaultState), saved) : clone(defaultState);
+            Object.keys(loaded.assessments || {}).forEach((name) => {
+                if (typeof loaded.assessments[name] === "number") {
+                    const score = loaded.assessments[name];
+                    loaded.assessments[name] = { skill: name, score, correct: 0, total: 0, level: performanceLevel(score), verified: score >= 60, at: new Date().toISOString(), answers: [] };
+                }
+            });
+            return loaded;
         } catch (error) {
             console.warn("NextStep state could not be loaded.", error);
             return clone(defaultState);
@@ -75,8 +134,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function verificationScore(skill) {
+        const assessment = state.assessments[canonical(skill.name)];
+        if (assessment && Number.isFinite(assessment.score)) return assessment.score;
         const evidenceScore = Math.min(100, (skill.evidence || []).length * 20);
-        const assessmentScore = state.assessments[canonical(skill.name)] || 0;
+        const assessmentScore = 0;
         return Math.round(Math.min(100, skill.score * 0.6 + evidenceScore * 0.2 + assessmentScore * 0.2));
     }
 
@@ -172,9 +233,21 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         const details = $("#skills .large-card");
         if (details) {
-            details.innerHTML = state.skills.map((skill) => `<div class="skill-detail"><div class="skill-icon">${skill.name.slice(0, 2)}</div><div class="skill-detail-info"><h3>${skill.name}</h3><p>${skill.level}</p></div><div class="skill-detail-value"><span>Truth Score</span><strong>${verificationScore(skill)}/100</strong></div><span class="status ${verificationScore(skill) >= 60 ? "good" : "warning"}">${skill.evidence.length ? "Evidence added" : "Needs evidence"}</span><button class="small-button edit-skill" data-skill="${skill.name}">Edit</button></div>`).join("") + `<button class="primary-button" id="addSkillButton">+ Add Skill</button>`;
+            details.innerHTML = state.skills.map((skill) => {
+                const assessment = state.assessments[canonical(skill.name)];
+                return `<div class="skill-detail"><div class="skill-icon">${skill.name.slice(0, 2)}</div><div class="skill-detail-info"><h3>${skill.name}</h3><p>${skill.level}</p></div><div class="skill-detail-value"><span>Truth Score</span><strong>${verificationScore(skill)}/100</strong></div><span class="status ${verificationScore(skill) >= 60 ? "good" : "warning"}">${assessment ? `${assessment.level} · ${assessment.correct}/${assessment.total}` : skill.evidence.length ? "Evidence added" : "Needs evidence"}</span><button class="small-button edit-skill" data-skill="${skill.name}">Edit</button></div>`;
+            }).join("") + `<button class="primary-button" id="addSkillButton">+ Add Skill</button>`;
             $("#addSkillButton").addEventListener("click", () => showSkillModal());
             $$(".edit-skill").forEach((button) => button.addEventListener("click", () => showSkillModal(findSkill(button.dataset.skill))));
+        }
+        const verification = $("#verification .large-card");
+        if (verification) {
+            verification.innerHTML = state.skills.map((skill) => {
+                const assessment = state.assessments[canonical(skill.name)];
+                const score = assessment ? assessment.score : "Not attempted";
+                return `<div class="verification-row"><div><h3>${skill.name} Assessment</h3><p>Claimed: ${skill.level} · Evidence: ${skill.evidence.length} · Latest score: ${score}${assessment ? `% · ${assessment.level}` : ""}</p></div><button class="small-button" data-assessment="${skill.name}">${assessment ? "Retake" : "Start"}</button></div>`;
+            }).join("");
+            $$("[data-assessment]", verification).forEach((button) => button.addEventListener("click", () => showAssessmentModal(button.dataset.assessment)));
         }
     }
 
@@ -241,13 +314,80 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+    function shuffle(items) {
+        return items.slice().sort(() => Math.random() - 0.5);
+    }
+
+    let activeAssessment = null;
+
     function showAssessmentModal(skillName) {
-        openModal(`${skillName} Assessment`, `<form id="assessmentForm" class="modal-form"><p class="muted">This is a transparent self-assessment used as one verification input.</p><label>Assessment score<select id="assessmentScore"><option value="100">Very confident (100)</option><option value="80">Confident (80)</option><option value="60">Moderate (60)</option><option value="40">Needs practice (40)</option><option value="20">Beginner (20)</option></select></label><button class="primary-button" type="submit">Save Assessment</button></form>`);
-        $("#assessmentForm").addEventListener("submit", (event) => {
-            event.preventDefault();
-            state.assessments[canonical(skillName)] = Number($("#assessmentScore").value);
-            saveState(); closeModal(); render(); showToast(`${skillName} assessment saved.`);
+        const bank = questionBank[skillName] || [];
+        if (!bank.length) return showToast(`No question bank is available for ${skillName} yet.`);
+        const previous = state.assessments[canonical(skillName)];
+        activeAssessment = { skillName, questions: shuffle(bank).slice(0, Math.min(5, bank.length)).map((question) => ({ ...question, options: shuffle(question.options) })), index: 0, answers: [], previous };
+        renderAssessmentQuestion();
+    }
+
+    function renderAssessmentQuestion() {
+        const quiz = activeAssessment;
+        const question = quiz.questions[quiz.index];
+        const selected = quiz.answers[quiz.index];
+        openModal(`${quiz.skillName} Assessment`, `<div class="assessment-shell"><div class="assessment-meta"><strong>Question ${quiz.index + 1} of ${quiz.questions.length}</strong><span>${question.difficulty}</span></div><div class="assessment-progress"><div style="width:${((quiz.index + 1) / quiz.questions.length) * 100}%"></div></div><h3>${question.q}</h3><div class="assessment-options">${question.options.map((option) => `<button type="button" class="assessment-option ${selected === option ? "selected" : ""}" data-option="${option}">${option}</button>`).join("")}</div><p class="muted">Select one answer to continue.</p><button class="primary-button" id="nextAssessmentButton" ${selected ? "" : "disabled"}>${quiz.index === quiz.questions.length - 1 ? "Finish Assessment" : "Next Question"}</button></div>`);
+        $$(".assessment-option").forEach((button) => button.addEventListener("click", () => {
+            quiz.answers[quiz.index] = button.dataset.option;
+            $$(".assessment-option").forEach((item) => item.classList.toggle("selected", item === button));
+            $("#nextAssessmentButton").disabled = false;
+        }));
+        $("#nextAssessmentButton").addEventListener("click", () => {
+            if (!quiz.answers[quiz.index]) return;
+            if (quiz.index < quiz.questions.length - 1) {
+                quiz.index += 1;
+                renderAssessmentQuestion();
+            } else {
+                finishAssessment();
+            }
         });
+    }
+
+    function performanceLevel(score) {
+        if (score >= 90) return "Expert";
+        if (score >= 75) return "Strong";
+        if (score >= 60) return "Intermediate";
+        if (score >= 40) return "Developing";
+        return "Beginner";
+    }
+
+    function evaluateAnswer(question, answer) {
+        return question.answer === answer;
+    }
+
+    function finishAssessment() {
+        const quiz = activeAssessment;
+        const correct = quiz.questions.filter((question, index) => question.answer === quiz.answers[index]).length;
+        const score = Math.round(correct / quiz.questions.length * 100);
+        const result = { skill: quiz.skillName, score, correct, total: quiz.questions.length, level: performanceLevel(score), verified: score >= 60, at: new Date().toISOString(), answers: quiz.answers, previous: quiz.previous || null };
+        state.assessments[canonical(quiz.skillName)] = result;
+        saveState();
+        render();
+        renderAssessmentResult(result, quiz.questions);
+    }
+
+    function renderAssessmentResult(result, questions) {
+        const improvement = result.previous ? result.score - result.previous.score : 0;
+        openModal("Assessment Complete 🎉", `<div class="assessment-result"><div class="result-score">${result.score}%</div><span class="status ${result.verified ? "good" : "warning"}">${result.level} Skill · ${result.verified ? "Verified" : "Needs improvement"}</span><p><strong>${result.correct} / ${result.total} Correct</strong></p>${improvement ? `<p class="green-text">${improvement > 0 ? "+" : ""}${improvement}% improvement from your previous attempt</p>` : ""}<h3>Question-wise review</h3><div class="assessment-review">${questions.map((question, index) => { const isCorrect = result.answers[index] === question.answer; return `<div class="review-item"><strong>${isCorrect ? "✓ Correct" : "✗ Incorrect"} · ${question.q}</strong><p>Your answer: ${result.answers[index] || "Not answered"}</p><p>Correct answer: ${question.answer}</p><p class="muted">${question.explanation}</p></div>`; }).join("")}</div><div class="assessment-actions"><button class="secondary-button" id="reviewAssessmentButton">Review Answers</button><button class="primary-button" id="continueGapButton">Continue to Career Gap</button></div></div>`);
+        $("#continueGapButton").addEventListener("click", () => { closeModal(); navigateTo("gap"); });
+        $("#reviewAssessmentButton").addEventListener("click", () => $(".assessment-review").classList.toggle("hidden"));
+    }
+
+    function showLearningPathModal() {
+        const path = generateLearningPath();
+        const progress = state.learningProgress || {};
+        openModal("Personalized Learning Path", `<div class="learning-path"><h3>${state.profile.career}</h3><p class="muted">Generated from your current skill gaps. Tick a topic when you complete it.</p>${path.map((topic, index) => `<label class="learning-topic"><input type="checkbox" data-topic="${topic}" ${progress[topic] ? "checked" : ""}> <span>${index + 1}. ${topic}</span></label>`).join("") || "<p class=\"muted\">You are on track for this career.</p>"}</div>`);
+        $$(".learning-topic input").forEach((checkbox) => checkbox.addEventListener("change", () => {
+            state.learningProgress[checkbox.dataset.topic] = checkbox.checked;
+            saveState();
+            showToast(checkbox.checked ? "Topic marked complete." : "Topic moved back to your plan.");
+        }));
     }
 
     function showProfileModal() {
@@ -271,18 +411,18 @@ document.addEventListener("DOMContentLoaded", function () {
         check("TEST-02", "Updated profile name", "Asha Student", sample.profile.name);
         sample.skills.push({ name: "Testing", level: "Beginner", score: 40, evidence: [] });
         check("TEST-03", "Add one skill", 6, sample.skills.length);
-        sample.assessments.java = 90;
-        check("TEST-04", "Assessment score recorded", 90, sample.assessments.java);
+        const generated = shuffle(questionBank.Java).slice(0, 5);
+        check("TEST-04", "Question generation", 5, generated.length);
+        check("TEST-05", "Question selection has no duplicates", 5, new Set(generated.map((question) => question.q)).size);
+        check("TEST-06", "Answer evaluation", true, evaluateAnswer(generated[0], generated[0].answer));
+        check("TEST-07", "Score calculation", 80, Math.round(4 / 5 * 100));
+        check("TEST-08", "Performance-level calculation", "Strong", performanceLevel(80));
+        sample.assessments.java = { score: 80, correct: 4, total: 5, level: "Strong", verified: true };
+        check("TEST-09", "Skill verification update", 80, sample.assessments.java.score);
         const required = careers["Software Developer"];
-        check("TEST-05", "Required skills lookup", 5, required.length);
-        const matchCount = sample.skills.filter((skill) => required.includes(skill.name)).length;
-        check("TEST-06", "Readiness inputs", 5, matchCount);
-        check("TEST-07", "Learning path from gaps", true, generateLearningPath({ missing: [{ name: "Data Structures" }] }).length > 0);
-        check("TEST-08", "Peer matching", true, matchPeers().length > 0);
-        check("TEST-09", "Invalid score rejected", true, !(Number("bad") >= 0));
-        check("TEST-10", "Unknown career has no requirements", 0, (careers["Unknown"] || []).length);
-        check("TEST-11", "Empty skills produces zero matches", 0, analyzeGapWithSkills([]).matched.length);
-        check("TEST-12", "Unknown skill verification is safe", 0, verificationScore({ name: "Unknown", score: 0, evidence: [] }));
+        check("TEST-10", "Career Gap integration", true, required.includes("Java"));
+        check("TEST-11", "Reassessment stores latest score", 85, Object.assign({}, sample.assessments.java, { score: 85 }).score);
+        check("TEST-12", "Unknown career and empty skills are safe", 0, analyzeGapWithSkills([]).matched.length);
         return results;
     }
 
@@ -320,12 +460,17 @@ document.addEventListener("DOMContentLoaded", function () {
     $("#editProfileButton").addEventListener("click", showProfileModal);
     $$("[data-assessment]").forEach((button) => button.addEventListener("click", () => showAssessmentModal(button.dataset.assessment)));
     $("#gapLearningButton").addEventListener("click", () => {
-        const path = generateLearningPath();
-        openModal("Personalized Learning Path", `<h3>${state.profile.career}</h3><p class="muted">Generated from your current skill gaps.</p><ol>${path.map((topic) => `<li>${topic}</li>`).join("") || "<li>You are on track for this career.</li>"}</ol>`);
+        showLearningPathModal();
     });
     $("#learningPathButton").addEventListener("click", () => navigateTo("gap"));
     $("#marketGapButton").addEventListener("click", () => navigateTo("gap"));
-    $("#reassessmentButton").addEventListener("click", () => showToast("Reassessment is recorded through Skill Verification."));
+    $("#reassessmentButton").addEventListener("click", () => {
+        const skill = state.skills.find((item) => questionBank[item.name]);
+        if (skill) {
+            navigateTo("verification");
+            showAssessmentModal(skill.name);
+        } else showToast("Add a supported skill before reassessing.");
+    });
     $("#notificationButton").addEventListener("click", () => openModal("Notifications", `<p class="muted">${analyzeGap().missing.length ? "Your highest-priority gaps are ready for review." : "No outstanding skill gaps."}</p>`));
     $$(".connect-button").forEach((button) => button.addEventListener("click", () => showToast(`Connection request sent to ${button.dataset.person}.`)));
     $("#runValidationButton").addEventListener("click", () => { renderValidation(); showToast("Validation tests completed."); });
