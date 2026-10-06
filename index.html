@@ -1,0 +1,1771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NextStep | Career Intelligence</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+</head>
+
+<body>
+
+<!-- =====================================================
+     LOGIN
+===================================================== -->
+
+<div id="loginPage" class="login-page">
+
+    <div class="login-card">
+
+        <div class="login-brand">
+
+            <div class="brand-logo">
+                N
+            </div>
+
+            <div>
+                <h1>NextStep</h1>
+                <span>Career Intelligence</span>
+            </div>
+
+        </div>
+
+        <div class="login-heading">
+            <h2>Welcome back</h2>
+
+            <p>
+                Know where you stand.
+                Know what's next.
+            </p>
+        </div>
+
+        <form id="loginForm">
+
+            <div class="form-group">
+
+                <label>Email</label>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="student@example.com"
+                    required
+                >
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Password</label>
+
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Enter password"
+                    required
+                >
+
+            </div>
+
+            <p id="loginError" class="error-message"></p>
+
+            <button type="submit" class="primary-button login-button">
+                Sign in to NextStep
+            </button>
+
+        </form>
+
+        <p class="demo-note">
+            Demo login — use any valid email and password.
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     MAIN APPLICATION
+===================================================== -->
+
+<div id="app" class="app hidden">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="brand">
+
+            <div class="brand-logo">
+                N
+            </div>
+
+            <div class="brand-text">
+
+                <h1>NextStep</h1>
+
+                <span>
+                    Career Intelligence
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <nav class="navigation">
+
+            <div class="nav-section">
+                OVERVIEW
+            </div>
+
+            <button
+                class="nav-item active"
+                data-page="dashboard"
+            >
+                <span>⌂</span>
+                Dashboard
+            </button>
+
+
+            <div class="nav-section">
+                CAREER
+            </div>
+
+            <button
+                class="nav-item"
+                data-page="skills"
+            >
+                <span>◈</span>
+                My Skills
+            </button>
+
+            <button
+                class="nav-item"
+                data-page="verification"
+            >
+                <span>✓</span>
+                Skill Verification
+            </button>
+
+            <button
+                class="nav-item"
+                data-page="gap"
+            >
+                <span>↗</span>
+                Career Gap
+            </button>
+
+            <button
+                class="nav-item"
+                data-page="exchange"
+            >
+                <span>◎</span>
+                Skill Exchange
+            </button>
+
+
+            <div class="nav-section">
+                DISCOVER
+            </div>
+
+            <button
+                class="nav-item"
+                data-page="market"
+            >
+                <span>◌</span>
+                Market Insights
+            </button>
+
+            <button
+                class="nav-item"
+                data-page="progress"
+            >
+                <span>↻</span>
+                Progress
+            </button>
+
+
+            <div class="nav-section">
+                ACCOUNT
+            </div>
+
+            <button
+                class="nav-item"
+                data-page="profile"
+            >
+                <span>○</span>
+                Profile
+            </button>
+
+        </nav>
+
+
+        <div class="sidebar-profile">
+
+            <div class="avatar">
+                LC
+            </div>
+
+            <div class="sidebar-user">
+
+                <strong id="sidebarName">
+                    Lokesh C.
+                </strong>
+
+                <span>
+                    Student
+                </span>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN -->
+
+    <main class="main-content">
+
+        <!-- TOP BAR -->
+
+        <header class="topbar">
+
+            <div>
+
+                <span id="pageTitle">
+                    Dashboard
+                </span>
+
+            </div>
+
+
+            <div class="topbar-actions">
+
+                <button
+                    class="top-icon"
+                    id="notificationButton"
+                    title="Notifications"
+                >
+                    ♧
+                </button>
+
+                <button
+                    class="top-icon logout-icon"
+                    id="logoutButton"
+                    title="Logout"
+                >
+                    ↪
+                </button>
+
+                <div class="avatar">
+                    LC
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- =========================================
+             DASHBOARD
+        ========================================== -->
+
+        <section
+            id="dashboard"
+            class="page active-page"
+        >
+
+            <div class="welcome-section">
+
+                <div>
+
+                    <p class="eyebrow">
+                        YOUR CAREER JOURNEY
+                    </p>
+
+                    <h2>
+                        Good morning, Lokesh.
+                    </h2>
+
+                    <p>
+                        Know where you stand. Know what's next.
+                    </p>
+
+                </div>
+
+
+                <button
+                    class="primary-button"
+                    id="addEvidenceButton"
+                >
+                    + Add Evidence
+                </button>
+
+            </div>
+
+
+            <!-- OVERVIEW -->
+
+            <div class="overview-grid">
+
+
+                <!-- READINESS -->
+
+                <div class="card readiness-card">
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <span class="card-label">
+                                CAREER READINESS
+                            </span>
+
+                            <h3>
+                                Overall readiness
+                            </h3>
+
+                        </div>
+
+                        <span class="status good">
+                            Improving
+                        </span>
+
+                    </div>
+
+
+                    <div class="readiness-content">
+
+                        <div class="progress-ring">
+
+                            <div>
+
+                                <strong>
+                                    68
+                                </strong>
+
+                                <span>
+                                    /100
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div>
+
+                            <p class="green-text">
+                                ↑ 8% since last assessment
+                            </p>
+
+                            <p class="muted">
+                                You're building a strong foundation.
+                                Focus on your highest-priority skill
+                                gaps to improve your readiness.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TARGET CAREER -->
+
+                <div class="card">
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <span class="card-label">
+                                TARGET CAREER
+                            </span>
+
+                            <h3 id="targetCareer">
+                                Software Developer
+                            </h3>
+
+                        </div>
+
+                        <button
+                            class="small-button"
+                            id="changeCareerButton"
+                        >
+                            Change
+                        </button>
+
+                    </div>
+
+
+                    <div class="career-info">
+
+                        <div class="career-icon">
+                            &lt;/&gt;
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                7 skills matched
+                            </strong>
+
+                            <span>
+                                3 skills need attention
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="progress-info">
+
+                        <div>
+                            <span>Career alignment</span>
+                            <strong>74%</strong>
+                        </div>
+
+                        <div class="progress-bar">
+
+                            <div style="width:74%"></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- SKILL TRUTH -->
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="card-label">
+                        EVIDENCE-BASED PROFILE
+                    </span>
+
+                    <h3>
+                        Skill Truth
+                    </h3>
+
+                    <p class="muted">
+                        What you claim compared with what you demonstrate.
+                    </p>
+
+                </div>
+
+                <button
+                    class="text-button"
+                    data-page-link="skills"
+                >
+                    View all skills →
+                </button>
+
+            </div>
+
+
+            <div class="skill-table card">
+
+                <div class="skill-header">
+
+                    <span>SKILL</span>
+                    <span>YOUR CLAIM</span>
+                    <span>VERIFIED</span>
+                    <span>TRUTH SCORE</span>
+                    <span>STATUS</span>
+
+                </div>
+
+
+                <!-- JAVA -->
+
+                <div class="skill-row">
+
+                    <div class="skill-name">
+
+                        <div class="skill-icon java">
+                            J
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Java
+                            </strong>
+
+                            <span>
+                                Programming
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            Advanced
+                        </strong>
+
+                        <div class="mini-bar">
+                            <div style="width:90%"></div>
+                        </div>
+
+                        <small>
+                            90%
+                        </small>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            76%
+                        </strong>
+
+                        <div class="mini-bar verified">
+                            <div style="width:76%"></div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="truth-score">
+                        76
+                        <small>/100</small>
+                    </div>
+
+
+                    <span class="status good">
+                        Supported
+                    </span>
+
+                </div>
+
+
+                <!-- DSA -->
+
+                <div class="skill-row">
+
+                    <div class="skill-name">
+
+                        <div class="skill-icon dsa">
+                            D
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Data Structures
+                            </strong>
+
+                            <span>
+                                Computer Science
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            Advanced
+                        </strong>
+
+                        <div class="mini-bar">
+                            <div style="width:85%"></div>
+                        </div>
+
+                        <small>
+                            85%
+                        </small>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            48%
+                        </strong>
+
+                        <div class="mini-bar verified">
+                            <div style="width:48%"></div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="truth-score warning-score">
+                        61
+                        <small>/100</small>
+                    </div>
+
+
+                    <span class="status warning">
+                        Needs evidence
+                    </span>
+
+                </div>
+
+
+                <!-- PYTHON -->
+
+                <div class="skill-row">
+
+                    <div class="skill-name">
+
+                        <div class="skill-icon python">
+                            Py
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Python
+                            </strong>
+
+                            <span>
+                                Programming
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            Intermediate
+                        </strong>
+
+                        <div class="mini-bar">
+                            <div style="width:75%"></div>
+                        </div>
+
+                        <small>
+                            75%
+                        </small>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            71%
+                        </strong>
+
+                        <div class="mini-bar verified">
+                            <div style="width:71%"></div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="truth-score">
+                        71
+                        <small>/100</small>
+                    </div>
+
+
+                    <span class="status good">
+                        Supported
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- LOWER CARDS -->
+
+            <div class="bottom-grid">
+
+
+                <!-- CAREER GAP -->
+
+                <div class="card">
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <span class="card-label">
+                                CAREER GAP
+                            </span>
+
+                            <h3>
+                                Priority areas
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="gap-item">
+
+                        <div class="gap-icon red">
+                            !
+                        </div>
+
+                        <div class="gap-text">
+
+                            <strong>
+                                Data Structures
+                            </strong>
+
+                            <p>
+                                High priority · Verified level is below target.
+                            </p>
+
+                        </div>
+
+                        <b>
+                            48%
+                        </b>
+
+                    </div>
+
+
+                    <div class="gap-item">
+
+                        <div class="gap-icon orange">
+                            !
+                        </div>
+
+                        <div class="gap-text">
+
+                            <strong>
+                                DBMS
+                            </strong>
+
+                            <p>
+                                Medium priority · Strengthen SQL fundamentals.
+                            </p>
+
+                        </div>
+
+                        <b>
+                            54%
+                        </b>
+
+                    </div>
+
+
+                    <div class="gap-item">
+
+                        <div class="gap-icon green">
+                            ✓
+                        </div>
+
+                        <div class="gap-text">
+
+                            <strong>
+                                Operating Systems
+                            </strong>
+
+                            <p>
+                                On track · Evidence aligns with target.
+                            </p>
+
+                        </div>
+
+                        <b>
+                            72%
+                        </b>
+
+                    </div>
+
+                </div>
+
+
+                <!-- NEXT STEP -->
+
+                <div class="card next-step-card">
+
+                    <span class="card-label">
+                        RECOMMENDED NEXT STEP
+                    </span>
+
+                    <h3>
+                        Strengthen your DSA
+                    </h3>
+
+                    <p class="muted">
+                        Your assessment shows a gap between your claimed
+                        and demonstrated DSA proficiency.
+                    </p>
+
+
+                    <div class="comparison">
+
+                        <div>
+
+                            <span>
+                                Current
+                            </span>
+
+                            <strong>
+                                48%
+                            </strong>
+
+                        </div>
+
+                        <b>
+                            →
+                        </b>
+
+                        <div>
+
+                            <span>
+                                Target
+                            </span>
+
+                            <strong>
+                                75%
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        class="secondary-button"
+                        id="learningPathButton"
+                    >
+                        View learning path →
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             MY SKILLS
+        ========================================== -->
+
+        <section
+            id="skills"
+            class="page"
+        >
+
+            <div class="page-heading">
+
+                <span class="card-label">
+                    EVIDENCE-BASED PROFILE
+                </span>
+
+                <h2>
+                    My Skills
+                </h2>
+
+                <p>
+                    See how your claims compare with your demonstrated ability.
+                </p>
+
+            </div>
+
+
+            <div class="card large-card">
+
+                <div class="skill-detail">
+
+                    <div class="skill-icon java">
+                        J
+                    </div>
+
+                    <div class="skill-detail-info">
+
+                        <h3>
+                            Java
+                        </h3>
+
+                        <p>
+                            Programming
+                        </p>
+
+                    </div>
+
+                    <div class="skill-detail-value">
+                        <span>Truth Score</span>
+                        <strong>76/100</strong>
+                    </div>
+
+                    <span class="status good">
+                        Supported
+                    </span>
+
+                </div>
+
+
+                <div class="skill-detail">
+
+                    <div class="skill-icon dsa">
+                        D
+                    </div>
+
+                    <div class="skill-detail-info">
+
+                        <h3>
+                            Data Structures
+                        </h3>
+
+                        <p>
+                            Computer Science
+                        </p>
+
+                    </div>
+
+                    <div class="skill-detail-value">
+                        <span>Truth Score</span>
+                        <strong>61/100</strong>
+                    </div>
+
+                    <span class="status warning">
+                        Needs evidence
+                    </span>
+
+                </div>
+
+
+                <div class="skill-detail">
+
+                    <div class="skill-icon python">
+                        Py
+                    </div>
+
+                    <div class="skill-detail-info">
+
+                        <h3>
+                            Python
+                        </h3>
+
+                        <p>
+                            Programming
+                        </p>
+
+                    </div>
+
+                    <div class="skill-detail-value">
+                        <span>Truth Score</span>
+                        <strong>71/100</strong>
+                    </div>
+
+                    <span class="status good">
+                        Supported
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <button
+                class="primary-button"
+                id="skillsEvidenceButton"
+            >
+                + Add Evidence
+            </button>
+
+        </section>
+
+
+        <!-- =========================================
+             VERIFICATION
+        ========================================== -->
+
+        <section
+            id="verification"
+            class="page"
+        >
+
+            <div class="page-heading">
+
+                <span class="card-label">
+                    PROVE YOUR SKILLS
+                </span>
+
+                <h2>
+                    Skill Verification
+                </h2>
+
+                <p>
+                    Demonstrate your ability instead of relying only on resume claims.
+                </p>
+
+            </div>
+
+
+            <div class="card large-card">
+
+                <div class="verification-row">
+
+                    <div>
+
+                        <h3>
+                            Java Assessment
+                        </h3>
+
+                        <p>
+                            20 questions · Current score 76%
+                        </p>
+
+                    </div>
+
+                    <button
+                        class="small-button"
+                        data-assessment="Java"
+                    >
+                        Retake
+                    </button>
+
+                </div>
+
+
+                <div class="verification-row">
+
+                    <div>
+
+                        <h3>
+                            Data Structures Assessment
+                        </h3>
+
+                        <p>
+                            20 questions · Current score 48%
+                        </p>
+
+                    </div>
+
+                    <button
+                        class="small-button"
+                        data-assessment="Data Structures"
+                    >
+                        Retake
+                    </button>
+
+                </div>
+
+
+                <div class="verification-row">
+
+                    <div>
+
+                        <h3>
+                            Python Assessment
+                        </h3>
+
+                        <p>
+                            20 questions · Current score 71%
+                        </p>
+
+                    </div>
+
+                    <button
+                        class="small-button"
+                        data-assessment="Python"
+                    >
+                        Retake
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             CAREER GAP
+        ========================================== -->
+
+        <section
+            id="gap"
+            class="page"
+        >
+
+            <div class="page-heading">
+
+                <span class="card-label">
+                    CAREER ALIGNMENT
+                </span>
+
+                <h2>
+                    Career Skill Gap
+                </h2>
+
+                <p>
+                    Compare your demonstrated skills with your target career.
+                </p>
+
+            </div>
+
+
+            <div class="card large-card">
+
+                <div class="gap-row">
+
+                    <div>
+                        <h3>Data Structures</h3>
+                        <p>Your 48% · Target 75%</p>
+                    </div>
+
+                    <span class="status warning">
+                        High gap
+                    </span>
+
+                </div>
+
+
+                <div class="gap-row">
+
+                    <div>
+                        <h3>DBMS</h3>
+                        <p>Your 54% · Target 70%</p>
+                    </div>
+
+                    <span class="status warning">
+                        Medium gap
+                    </span>
+
+                </div>
+
+
+                <div class="gap-row">
+
+                    <div>
+                        <h3>Java</h3>
+                        <p>Your 76% · Target 70%</p>
+                    </div>
+
+                    <span class="status good">
+                        On track
+                    </span>
+
+                </div>
+
+
+                <div class="gap-row">
+
+                    <div>
+                        <h3>Python</h3>
+                        <p>Your 71% · Target 65%</p>
+                    </div>
+
+                    <span class="status good">
+                        On track
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <button
+                class="primary-button"
+                id="gapLearningButton"
+            >
+                Start DSA Learning Path
+            </button>
+
+        </section>
+
+
+        <!-- =========================================
+             SKILL EXCHANGE
+        ========================================== -->
+
+        <section
+            id="exchange"
+            class="page"
+        >
+
+            <div class="page-heading">
+
+                <span class="card-label">
+                    PEER COLLABORATION
+                </span>
+
+                <h2>
+                    Skill Exchange
+                </h2>
+
+                <p>
+                    Find students with complementary strengths.
+                </p>
+
+            </div>
+
+
+            <div class="card large-card">
+
+                <div class="person-row">
+
+                    <div class="person-avatar">
+                        PS
+                    </div>
+
+                    <div class="person-info">
+
+                        <strong>
+                            Priya S.
+                        </strong>
+
+                        <span>
+                            Strong DBMS · Needs DSA
+                        </span>
+
+                    </div>
+
+                    <span class="match">
+                        94% match
+                    </span>
+
+                    <button
+                        class="small-button connect-button"
+                        data-person="Priya S."
+                    >
+                        Connect
+                    </button>
+
+                </div>
+
+
+                <div class="person-row">
+
+                    <div class="person-avatar">
+                        AK
+                    </div>
+
+                    <div class="person-info">
+
+                        <strong>
+                            Arjun K.
+                        </strong>
+
+                        <span>
+                            Strong DSA · Needs Java
+                        </span>
+
+                    </div>
+
+                    <span class="match">
+                        87% match
+                    </span>
+
+                    <button
+                        class="small-button connect-button"
+                        data-person="Arjun K."
+                    >
+                        Connect
+                    </button>
+
+                </div>
+
+
+                <div class="person-row">
+
+                    <div class="person-avatar">
+                        MR
+                    </div>
+
+                    <div class="person-info">
+
+                        <strong>
+                            Meera R.
+                        </strong>
+
+                        <span>
+                            Strong Python · Needs DBMS
+                        </span>
+
+                    </div>
+
+                    <span class="match">
+                        81% match
+                    </span>
+
+                    <button
+                        class="small-button connect-button"
+                        data-person="Meera R."
+                    >
+                        Connect
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             MARKET
+        ========================================== -->
+
+        <section
+            id="market"
+            class="page"
+        >
+
+            <div class="page-heading">
+
+                <span class="card-label">
+                    CAREER DISCOVERY
+                </span>
+
+                <h2>
+                    Market Insights
+                </h2>
+
+                <p>
+                    Understand what skills are becoming important.
+                </p>
+
+            </div>
+
+
+            <div class="overview-grid">
+
+                <div class="card">
+
+                    <span class="card-label">
+                        TRENDING SKILLS
+                    </span>
+
+                    <h3>
+                        Relevant to you
+                    </h3>
+
+
+                    <div class="market-item">
+
+                        <div>
+                            <strong>
+                                Cloud Computing
+                            </strong>
+
+                            <p>
+                                Growing relevance for software roles.
+                            </p>
+                        </div>
+
+                        <span class="status good">
+                            ↑ Rising
+                        </span>
+
+                    </div>
+
+
+                    <div class="market-item">
+
+                        <div>
+                            <strong>
+                                System Design
+                            </strong>
+
+                            <p>
+                                Increasing importance at higher levels.
+                            </p>
+                        </div>
+
+                        <span class="status good">
+                            ↑ Rising
+                        </span>
+
+                    </div>
+
+
+                    <div class="market-item">
+
+                        <div>
+                            <strong>
+                                AI Integration
+                            </strong>
+
+                            <p>
+                                Growing across modern development teams.
+                            </p>
+                        </div>
+
+                        <span class="status good">
+                            ↑ Rising
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card">
+
+                    <span class="card-label">
+                        YOUR OPPORTUNITY
+                    </span>
+
+                    <h3>
+                        What to learn next
+                    </h3>
+
+                    <p class="muted market-description">
+                        Your current profile suggests strengthening
+                        DSA first, followed by DBMS and system design.
+                    </p>
+
+                    <button
+                        class="secondary-button"
+                        id="marketGapButton"
+                    >
+                        Explore your gaps →
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             PROGRESS
+        ========================================== -->
+
+        <section
+            id="progress"
+            class="page"
+        >
+
+            <div class="page-heading">
+
+                <span class="card-label">
+                    YOUR GROWTH
+                </span>
+
+                <h2>
+                    Progress
+                </h2>
+
+                <p>
+                    Track how your demonstrated skills improve over time.
+                </p>
+
+            </div>
+
+
+            <div class="overview-grid">
+
+                <div class="card">
+
+                    <span class="card-label">
+                        DSA
+                    </span>
+
+                    <h3>
+                        Skill improvement
+                    </h3>
+
+
+                    <div class="progress-stat">
+
+                        <span>
+                            Initial score
+                        </span>
+
+                        <strong>
+                            48%
+                        </strong>
+
+                    </div>
+
+                    <div class="progress-bar">
+                        <div style="width:48%"></div>
+                    </div>
+
+
+                    <div class="progress-stat">
+
+                        <span>
+                            Target
+                        </span>
+
+                        <strong>
+                            75%
+                        </strong>
+
+                    </div>
+
+                    <div class="progress-bar">
+                        <div style="width:75%"></div>
+                    </div>
+
+
+                    <button
+                        class="primary-button"
+                        id="reassessmentButton"
+                    >
+                        Record Reassessment
+                    </button>
+
+                </div>
+
+
+                <div class="card">
+
+                    <span class="card-label">
+                        TIMELINE
+                    </span>
+
+                    <h3>
+                        Recent activity
+                    </h3>
+
+
+                    <div class="timeline-item">
+
+                        <span class="timeline-dot green-dot">
+                            ✓
+                        </span>
+
+                        <div>
+                            <strong>
+                                Python verified
+                            </strong>
+
+                            <p>
+                                Current score: 71%
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="timeline-item">
+
+                        <span class="timeline-dot">
+                            ✓
+                        </span>
+
+                        <div>
+                            <strong>
+                                Career selected
+                            </strong>
+
+                            <p>
+                                Software Developer
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="timeline-item">
+
+                        <span class="timeline-dot orange-dot">
+                            !
+                        </span>
+
+                        <div>
+                            <strong>
+                                DSA needs attention
+                            </strong>
+
+                            <p>
+                                Recommended next step
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             PROFILE
+        ========================================== -->
+
+        <section
+            id="profile"
+            class="page"
+        >
+
+            <div class="page-heading">
+
+                <span class="card-label">
+                    STUDENT PROFILE
+                </span>
+
+                <h2>
+                    Profile
+                </h2>
+
+                <p>
+                    Manage your background and career preferences.
+                </p>
+
+            </div>
+
+
+            <div class="card large-card">
+
+                <div class="profile-row">
+
+                    <div>
+
+                        <span>
+                            Name
+                        </span>
+
+                        <strong id="profileName">
+                            Lokesh Chowdhary
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="profile-row">
+
+                    <div>
+
+                        <span>
+                            Education
+                        </span>
+
+                        <strong>
+                            Computer Science / Engineering
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="profile-row">
+
+                    <div>
+
+                        <span>
+                            Target Career
+                        </span>
+
+                        <strong id="profileCareer">
+                            Software Developer
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="profile-row">
+
+                    <div>
+
+                        <span>
+                            Evidence
+                        </span>
+
+                        <strong>
+                            Resume · Projects · Assessments
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <button
+                class="primary-button"
+                id="editProfileButton"
+            >
+                Edit Profile
+            </button>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- =====================================================
+     MODAL
+===================================================== -->
+
+<div
+    id="modalOverlay"
+    class="modal-overlay hidden"
+>
+
+    <div class="modal">
+
+        <div class="modal-header">
+
+            <h3 id="modalTitle">
+                Modal
+            </h3>
+
+            <button
+                id="closeModal"
+                class="close-button"
+            >
+                ×
+            </button>
+
+        </div>
+
+        <div id="modalContent"></div>
+
+    </div>
+
+</div>
+
+
+<!-- TOAST -->
+
+<div
+    id="toast"
+    class="toast hidden"
+></div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
